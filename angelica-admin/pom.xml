@@ -48,6 +48,12 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 		</dependency>
 		
+		<!-- mybatis plus 依赖，包含了mybatis依赖 -->
+		<dependency>
+		      <groupId>com.baomidou</groupId>
+		      <artifactId>mybatis-plus-boot-starter</artifactId>
+		 </dependency>
+		
 		<!-- 文件上传 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -90,5 +96,16 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+		<!-- 如果mapper.xml是放在src/main/java目录下，需配置以下-->
+		<resources>
+	      <resource>
+	          <directory>src/main/java</directory>
+	          <filtering>false</filtering>
+	          <includes>
+	              <include>**/mapper/*.xml</include>
+	          </includes>
+	      </resource>
+  		</resources>
 	</build>
 </project>

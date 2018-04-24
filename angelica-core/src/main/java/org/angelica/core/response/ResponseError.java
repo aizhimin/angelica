@@ -1,7 +1,7 @@
 package org.angelica.core.response;
 
 /**
- * 请求码
+ * 通用请求错误码
  * @author aiken
  *
  */

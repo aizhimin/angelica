@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.angelica.admin.common.Constant;
 import org.angelica.core.response.ResponseError;
 import org.angelica.core.response.ResponseResult;
-import org.angelica.core.utils.JsonMapper;
+import org.angelica.core.utils.JacksonUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -47,7 +47,7 @@ public class JwtTokenFilter extends AuthenticatingFilter {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.setContentType("application/json;charset=utf-8");
             ResponseResult responseResult = ResponseResult.error(ResponseError.TOKEN_INVALID.getCode(), ResponseError.TOKEN_INVALID.getMsg());
-            String json = JsonMapper.nonDefaultMapper().toJson(responseResult);
+            String json = JacksonUtil.nonDefaultMapper().toJson(responseResult);
             httpResponse.getWriter().print(json);
             httpResponse.getWriter().close();
             return false;
@@ -67,7 +67,7 @@ public class JwtTokenFilter extends AuthenticatingFilter {
             //处理登录失败的异常
             Throwable throwable = e.getCause() == null ? e : e.getCause();
             ResponseResult responseResult = ResponseResult.error(ResponseError.TOKEN_INVALID.getCode(), ResponseError.TOKEN_INVALID.getMsg()+throwable.getMessage());
-            String json = JsonMapper.nonDefaultMapper().toJson(responseResult);
+            String json = JacksonUtil.nonDefaultMapper().toJson(responseResult);
             httpResponse.getWriter().print(json);
             httpResponse.getWriter().close();
         } catch (IOException e1) {

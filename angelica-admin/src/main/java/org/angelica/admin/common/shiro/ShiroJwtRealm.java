@@ -4,6 +4,9 @@ import java.util.Set;
 
 import org.angelica.admin.common.Constant;
 import org.angelica.admin.common.jwt.JwtToken;
+import org.angelica.admin.module.system.entity.AdminUser;
+import org.angelica.admin.module.system.service.AdminUserService;
+import org.angelica.core.redis.RedisKeys;
 import org.angelica.core.utils.JwtTokenUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -19,10 +22,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
-
-import com.angelica.qingdanxia.common.RedisKeys;
-import com.angelica.qingdanxia.entity.account.AdminUser;
-import com.angelica.qingdanxia.service.account.AdminUserService;
 
 import io.jsonwebtoken.ExpiredJwtException;
 /**

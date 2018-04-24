@@ -1,8 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2005, 2014 springside.github.io
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- *******************************************************************************/
 package org.angelica.core.utils;
 
 import java.io.IOException;
@@ -28,17 +23,13 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
  * 简单封装Jackson，实现JSON String<->Java Object的Mapper.
  * 封装不同的输出风格, 使用不同的builder函数创建实例.
  */
-public class JsonMapper {
+public class JacksonUtil {
 
-	private static Logger logger = LoggerFactory.getLogger(JsonMapper.class);
+	private static Logger logger = LoggerFactory.getLogger(JacksonUtil.class);
 
 	private ObjectMapper mapper;
 
-	public JsonMapper() {
-		this(null);
-	}
-
-	public JsonMapper(Include include) {
+	public JacksonUtil(Include include) {
 		mapper = new ObjectMapper();
 		// 设置输出时包含属性的风格
 		if (include != null) {
@@ -51,15 +42,15 @@ public class JsonMapper {
 	/**
 	 * 创建只输出非Null且非Empty(如List.isEmpty)的属性到Json字符串的Mapper,建议在外部接口中使用.
 	 */
-	public static JsonMapper nonEmptyMapper() {
-		return new JsonMapper(Include.NON_EMPTY);
+	public static JacksonUtil nonEmptyMapper() {
+		return new JacksonUtil(Include.NON_EMPTY);
 	}
 
 	/**
 	 * 创建只输出初始值被改变的属性到Json字符串的Mapper, 最节约的存储方式，建议在内部接口中使用。
 	 */
-	public static JsonMapper nonDefaultMapper() {
-		return new JsonMapper(Include.NON_DEFAULT);
+	public static JacksonUtil nonDefaultMapper() {
+		return new JacksonUtil(Include.NON_DEFAULT);
 	}
 
 	/**

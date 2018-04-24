@@ -21,6 +21,20 @@ public class ResponseResult extends LinkedHashMap<String, Object>{
 		return r;
 	}
 	
+	public static ResponseResult error(ResponseError error) {
+		ResponseResult r = new ResponseResult();
+		r.put("code", error.getCode());
+		r.put("msg", error.getMsg());
+		return r;
+	}
+	
+	public static ResponseResult error(ResponseError error,String msg) {
+		ResponseResult r = new ResponseResult();
+		r.put("code", error.getCode());
+		r.put("msg", error.getMsg()+" : "+msg);
+		return r;
+	}
+	
 	public static ResponseResult success(String msg) {
 		ResponseResult r = new ResponseResult();
 		r.put("msg", msg);

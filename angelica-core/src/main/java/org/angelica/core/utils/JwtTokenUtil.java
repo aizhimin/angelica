@@ -68,7 +68,7 @@ public class JwtTokenUtil {
 		jwtBuilder.compressWith(CompressionCodecs.GZIP);
 		//签名加密
 		byte[] base64EncodedSecretKey = DatatypeConverter.parseBase64Binary(jwtSecretKey);
-		jwtBuilder.signWith(SignatureAlgorithm.HS256, base64EncodedSecretKey);
+		jwtBuilder.signWith(SignatureAlgorithm.HS512, base64EncodedSecretKey);
 		
 	    //压缩jwt为字符串
 	    return jwtBuilder.compact();
@@ -88,6 +88,12 @@ public class JwtTokenUtil {
 	    return claims;
 	}
 	
+	/**
+	 * 从token中获取用户id
+	 * @param jwtSecretKey
+	 * @param jwtToken
+	 * @return
+	 */
 	public static Long getUserIdFromToken(String jwtSecretKey,String jwtToken) {
 		Claims claims = parseJWT(jwtSecretKey,jwtToken);
 		String subject = claims.getSubject();
