@@ -48,7 +48,8 @@ public class ShiroJwtRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		ShiroUser shiroUser = (ShiroUser)principals.getPrimaryPrincipal();
-		Set<String> permsSet = adminUserService.loadPermissions(shiroUser.getUserId());
+		
+		Set<String> permsSet = adminUserService.listPermission(shiroUser.getUserId());
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         info.setStringPermissions(permsSet);
         return info;
