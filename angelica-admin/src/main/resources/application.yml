@@ -4,24 +4,25 @@ server:
 spring: 
   application: 
     name: angelica-admin
+  # 运行环境
   profiles: 
     active: dev
-
-# jackson
-spring: 
+  # 彩色日志
+  output: 
+    ansi: 
+      enabled: detect
+  # jackson 
   jackson: 
     date-format: yyyy-MM-dd HH:mm:ss
     default-property-inclusion: NON_NULL
     time-zone: GMT+8
     locale: zh_CN
-
-# MULTIPART (MultipartProperties)
-spring: 
+  # 文件上传
   http: 
     multipart: 
       enabled: true
       file-size-threshold: 128KB
-      max-file-size: 5MB
+      max-file-size: 10MB
       max-request-size: 100MB
 
 # mybatis-plus

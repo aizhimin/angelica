@@ -1,4 +1,4 @@
-debug: true
+debug: false
 
 spring:
   # mysql 数据源
@@ -9,7 +9,7 @@ spring:
     username: root
     password: root
     druid: 
-      initial-size: 10 
+      initial-size: 10
       max-active: 100
       min-idle: 10
       max-wait: 60000
@@ -17,7 +17,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
-      #validation-query: SELECT 1 FROM DUAL
+      validation-query: select 'x'
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
@@ -30,7 +30,7 @@ spring:
           stat:
               log-slow-sql: true
               slow-sql-millis: 1000
-              merge-sql: false
+              merge-sql: true
           wall:
               config:
                   multi-statement-allow: true
