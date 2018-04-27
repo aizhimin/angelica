@@ -1,4 +1,4 @@
-package org.angelica.admin.module.system.service;
+package org.angelica.admin.service.system;
 
 import org.angelica.admin.entity.system.AdminUser;
 import org.angelica.admin.service.system.AdminUserService;

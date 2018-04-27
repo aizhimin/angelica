@@ -3,7 +3,7 @@ package org.angelica.admin.entity.system;
 import org.angelica.core.entity.BaseEntity;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 /**
- * 角色
+ * 平台角色
  * @author aizhimin
  */
 public class AdminRole extends BaseEntity {

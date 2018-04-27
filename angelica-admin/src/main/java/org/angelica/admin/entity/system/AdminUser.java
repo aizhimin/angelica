@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * 管理员
+ * 平台管理员
  * @author aizhimin
  */
 public class AdminUser extends BaseEntity {

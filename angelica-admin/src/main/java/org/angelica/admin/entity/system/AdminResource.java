@@ -2,7 +2,11 @@ package org.angelica.admin.entity.system;
 
 import org.angelica.core.entity.BaseEntity;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
+/**
+ * 平台资源
+ * @author aizhimin
+ *
+ */
 public class AdminResource extends BaseEntity {
 	private String resourceName;//资源名称
 	private Integer resourceType;//资源类型：0-模块,1-菜单,2-按钮
