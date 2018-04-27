@@ -1,4 +1,4 @@
-package org.angelica.admin.exception;
+package org.angelica.admin.service;
 
 public class ServiceException extends RuntimeException {
 	

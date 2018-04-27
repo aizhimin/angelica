@@ -1,6 +1,7 @@
 package org.angelica.admin.module.system.service;
 
-import org.angelica.admin.module.system.entity.AdminUser;
+import org.angelica.admin.entity.system.AdminUser;
+import org.angelica.admin.service.system.AdminUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

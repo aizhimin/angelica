@@ -1,13 +1,13 @@
-package org.angelica.admin.module.system.service.impl;
+package org.angelica.admin.service.system.impl;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.angelica.admin.module.system.dao.AdminUserDao;
-import org.angelica.admin.module.system.entity.AdminUser;
-import org.angelica.admin.module.system.service.AdminUserService;
+import org.angelica.admin.dao.system.AdminUserDao;
+import org.angelica.admin.entity.system.AdminUser;
+import org.angelica.admin.service.system.AdminUserService;
 import org.angelica.core.redis.RedisKeys;
 import org.angelica.core.utils.JacksonUtil;
 import org.apache.commons.lang3.StringUtils;

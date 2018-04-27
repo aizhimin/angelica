@@ -1,4 +1,4 @@
-package org.angelica.admin.module.system.entity;
+package org.angelica.admin.entity.system;
 
 import org.angelica.core.entity.BaseEntity;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;

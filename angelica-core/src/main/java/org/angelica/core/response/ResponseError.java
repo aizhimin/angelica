@@ -6,7 +6,7 @@ package org.angelica.core.response;
  *
  */
 public enum ResponseError {
-	UNKNOWN(-1,"服务器未知运行时异常"),
+	UNKNOWN(-1,"服务器异常"),
 	TOKEN_INVALID(401,"授权失败："),
 	MISSING_PARAM(1001,"缺失参数："),
 	HTTP_REQUEST_METHOD_NOTSUPPORTED(1002,"HTTP请求方式错误，仅支持："),

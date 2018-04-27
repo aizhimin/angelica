@@ -2,7 +2,7 @@ package org.angelica.admin.common.resolver;
 
 import org.angelica.admin.common.annotation.LoginUser;
 import org.angelica.admin.common.shiro.ShiroUser;
-import org.apache.shiro.SecurityUtils;
+import org.angelica.admin.common.shiro.ShiroUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -26,7 +26,7 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
 	@Override
 	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
 			NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-		ShiroUser user =  (ShiroUser)SecurityUtils.getSubject().getPrincipal();;
+		ShiroUser user =  ShiroUtils.getShiroUser();
         return user;
 	}
 

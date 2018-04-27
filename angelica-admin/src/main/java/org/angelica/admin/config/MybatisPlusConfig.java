@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 
 @Configuration
-@MapperScan("org.angelica.admin.module.*.dao")
+@MapperScan("org.angelica.admin.dao")
 public class MybatisPlusConfig {
 	/*
 	 * 分页插件，自动识别数据库类型

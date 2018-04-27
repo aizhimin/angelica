@@ -1,7 +1,12 @@
-package org.angelica.admin.exception;
+package org.angelica.admin.common;
 
 import java.util.List;
 
+import org.angelica.admin.common.shiro.ShiroUtils;
+import org.angelica.admin.service.ErrorCode;
+import org.angelica.admin.service.ServiceException;
+import org.angelica.admin.service.log.impl.LogTaskFactory;
+import org.angelica.core.log.LogManager;
 import org.angelica.core.response.ResponseError;
 import org.angelica.core.response.ResponseResult;
 import org.angelica.core.utils.ToolUtil;
@@ -43,6 +48,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = ServiceException.class)
 	public ResponseResult handle(ServiceException e) {
 		logger.error(ToolUtil.getExceptionMsg(e));
+		LogManager.getInstance().executeLog(LogTaskFactory.exceptionLog(ShiroUtils.getUserId(), e));
 		return ResponseResult.error(e.getCode(), e.getMessage());
 	}
 	

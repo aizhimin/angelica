@@ -1,8 +1,8 @@
-package org.angelica.admin.module.system.service;
+package org.angelica.admin.service.system;
 
 import java.util.Set;
 
-import org.angelica.admin.module.system.entity.AdminUser;
+import org.angelica.admin.entity.system.AdminUser;
 
 public interface AdminUserService {
 	/**

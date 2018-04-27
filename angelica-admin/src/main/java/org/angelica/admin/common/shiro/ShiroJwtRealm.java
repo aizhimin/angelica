@@ -4,8 +4,8 @@ import java.util.Set;
 
 import org.angelica.admin.common.Constant;
 import org.angelica.admin.common.jwt.JwtToken;
-import org.angelica.admin.module.system.entity.AdminUser;
-import org.angelica.admin.module.system.service.AdminUserService;
+import org.angelica.admin.entity.system.AdminUser;
+import org.angelica.admin.service.system.AdminUserService;
 import org.angelica.core.redis.RedisKeys;
 import org.angelica.core.utils.JwtTokenUtil;
 import org.apache.commons.lang3.StringUtils;
